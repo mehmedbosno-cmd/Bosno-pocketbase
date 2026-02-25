@@ -19,4 +19,4 @@ COPY --from=downloader /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 # PocketBase sluša na portu koji Railway dodjeljuje ($PORT varijabla)
 EXPOSE 8090
 
-CMD ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:${PORT:-8090}", "--dir=/pb_data"]
+CMD ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:$PORT", "--dir=/pb_data"]
